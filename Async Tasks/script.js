@@ -62,7 +62,7 @@ const fetchPromise = async (url) => {
 };
 
 const multiplePromises =  forTheCats.map(fetchPromise);
-const resultInArray = await Promise.all(multiplePromises)
+const resultInArray = Promise.all(multiplePromises)
 
 resultInArray.then((results)=>putImages(results))
 .catch(error=>console.log(error))
